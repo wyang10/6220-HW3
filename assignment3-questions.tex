@@ -1,0 +1,60 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\newcommand{\assignment}{3}
+\newcommand{\duedate}{February 15, 2023}
+\input{include/hw-template.tex}
+\author{
+    \textbf{YOUR NAME} \\ 
+    \textbf{YOUR GIT USERNAME} \\ 
+    \textbf{YOUR E-MAIL}
+}% INFORMATION
+
+\begin{document}
+
+\maketitle % Print the title
+
+% Convert to DOCX using https://pdf2docx.com/
+
+{\huge \textbf{Principle Components Analysis}} \\
+
+Italy is home to over 2000 grape varieties. Even within a single region, wines exhibit distinct attributes from different cultivators that can be measured with objective and numerical features. Notably, in the dataset we are exploring today, there are thirteen different measurements taken for different constituents found in the three types of wine. We would like to visualize how well-separated the data is for the different wineries in a 2D scatter plot.\\
+
+We will be using the UCI Wine's dataset. Please review \verb"sklearn"'s description of \href{https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html}{wine data}, and load it in with the following code:
+\begin{verbatim}
+from sklearn.datasets import load_wine
+wine = load_wine()
+\end{verbatim} \\
+\vspace{5mm}
+{\Large \textbf{Question 1} [50 pts]} \\
+
+Preprocess the the data with \textbf{z-score normalization} and scatter the data that's been projected onto the first two principle components with different colors for each target/class of wine. Include your code (linked or inline).\\
+
+The below scatter plot is an example of displaying multiple classes with different colors on a single plot.
+
+\begin{center}
+    \includegraphics[width=75mm]{images/pca-example.png}
+\end{center}
+
+{\huge \textbf{Parameter Estimation}} \\
+
+It is well-known that light bulbs commonly go out according to a Poisson distribution, and are independent regardless of whether or not they're made in the same factory. The Poisson distribution has the form: \\
+\begin{equation}
+p(X | \lambda) = \frac{ \exp^{-\lambda} \lambda ^{x_i}}{ x_i !} \nonumber
+\end{equation} \\
+
+An architect has outfitted a building with 32,000 of the same lightbulb. The factory has provided him with data on when $N$ of these lightbulbs have gone out over their lifetimes. They've been measured with $\mathcal{D} = \{ x_1, x_2, \cdots, x_N \}$\\
+\\
+{\Large \textbf{Question 2} [50 pts]} \\
+\\
+Derive the maximum likelihood estimate of the parameter $\lambda$ in terms of $x_i$. Please show your work. \\
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%
+{\huge \textbf{Submission Instructions}} \\
+%%%%%%%%%%%%%%%%%%%%
+
+When you have finished, follow the instructions on the \href{https://course.ccs.neu.edu/cs6220/homework-3/}{ homework main page}. Commit your code, outputs, and PDF writeup to your repository and provide the repository link to \href{https://www.gradescope.com}{Gradescope}.
+
+
+\end{document}
